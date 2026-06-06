@@ -57,11 +57,9 @@
         /* Quy tắc kích thước tiêu đề theo chuẩn */
         h1 {
             font-size: 1.5rem;
-            /* h1: 1.5 rem */
             color: var(--primary-color);
             margin-top: 0;
             margin-bottom: 0;
-            text-align: center;
         }
 
         /* Style cho phần tên tác giả */
@@ -76,7 +74,6 @@
 
         h2 {
             font-size: 1.3rem;
-            /* h2: 1.4 rem */
             color: var(--text-main);
             margin-top: 1.5rem;
             margin-bottom: 1rem;
@@ -87,7 +84,6 @@
 
         h3 {
             font-size: 1.2rem;
-            /* h3: 1.2 rem */
             font-weight: bold;
             color: var(--success-color);
             margin-top: 0;
@@ -310,14 +306,18 @@
             }
         }
     </style>
-    <!-- Thư viện jsQR - Giữ lại để quét mã QR -->
-    <script src="js/jsQR.min.js"></script>
+    <!-- Thư viện jsQR - Tải trực tuyến từ CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.min.js"></script>
+    <!-- Tự động chuyển sang file cục bộ trong thư mục 'js' nếu tải CDN thất bại -->
+    <script>
+        if (typeof jsQR === 'undefined') {
+            document.write('<script src="js/jsQR.min.js"><\/script>');
+        }
+    </script>
 </head>
 
 <body>
-
     <div class="content">
-
         <div align="center">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width=5rem height=5rem>
                 <path d="M4,22H22V4H4ZM8,8H18V18H8Z" />
